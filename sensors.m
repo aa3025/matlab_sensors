@@ -1,17 +1,17 @@
-% this file you launch on your mobile phone, it continiously
-% logging the data from enabled sensors (max execution time is 240 seconds)
+% this file you launch on your mobile phone, it is continiously
+% logging the data from enabled [in settings of Matlab Mobile app] sensors (max execution time is 240 seconds)
 % Alex Pedcenko 2020 
 
 
 clear all
-m = mobiledev;
-m.Logging = 1;
-discardlogs(m); % clearing all logs on device
+m = mobiledev; % open mobiledev object
+m.Logging = 1; % enable logging of sensors
+discardlogs(m); % clearing all previous sensors logs on device
 
 
-freq=5; % logging frequency from your device MATLAB settings, Hz 
+freq=5; % logging frequency from your device (MATLAB Mobile App settings), Hz 
 
-% let's log for 4 min
+% let's log for 4 min max
 seconds=240; % max script execution time on MATLAB mobile
 finalsamples=seconds*freq; % Nr of samples in the log
 
